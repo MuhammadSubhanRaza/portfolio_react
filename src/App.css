@@ -22,15 +22,17 @@ body{
 }
 
 .header-sec{
-  background: url('./../public/mine/6.jpg');
+  background: url('./../public/mine/6-min.jpg');
   background-size: cover;
   min-height: 100vh;
   background-position:0px -650px;
+  background-attachment: fixed;
 }
 .header-inner-content{
   min-height: 100vh;
-  background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0.3),rgba(0,0,0,0.8)),
+  background: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0),rgba(0,0,0,0)),
   url('./../public/images/overlay-pattern.png');
+  /* background:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.6),rgba(0,0,0,0.8)); */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,6 +75,7 @@ body{
 .cust-btn-scl:hover{
   color:white;
   opacity: 1;
+  background-color: var(--primary);
 }
 .cust-btn-scl:hover::before{
   opacity: 1;
@@ -100,7 +103,7 @@ body{
   padding: 0;
 }
 .header-desc{
-  color: rgb(155, 155, 155) !important;
+  color: rgb(211, 211, 211) !important;
   font-size: 0.9rem;
 }
 .header-desc div{
@@ -166,6 +169,7 @@ body{
 
 .cust-btn{
   display: inline-block;
+  background-color: transparent;
   text-transform: uppercase;
   letter-spacing: 2px;
   color: white;
@@ -260,11 +264,6 @@ body{
   font-size: 1.8rem;
 }
 
-/* @media screen and (max-width:1200px) {
-  .header-sec{
-    background-position: 0px -300px;
-  }
-} */
 
 @media screen and (max-width:700px) {
   .header-inner-content h1{
@@ -274,6 +273,14 @@ body{
     overflow: hidden;
   }
   .pointer-nav{
+    /* display: none; */
+    background-color: transparent;
+    padding: 0;
+    margin: 0;
+    padding-top: 10px;
+    padding-left: 10px;
+  }
+  .pointer-nav ul{
     display: none;
   }
   .btn-head-sections span{
@@ -291,3 +298,65 @@ body{
   }
 }
 
+
+/* -------------------------- SLIDER NAVIGATION -------------- */
+
+.slider-nav{
+  min-height: 100vh;
+  background-color: var(--base);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  overflow: hidden;
+}
+
+.full-nav-body{
+  position: absolute;
+  top:50%;
+  left:50%;
+  transform: translate(-50%,-50%);
+  width: 400px;
+}
+
+.full-nav-body ul li{
+  display: block;
+}
+.full-nav-body ul li a{
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  font-size: 1.4rem;
+  text-decoration: none;
+  display: block;
+  padding: 10px;
+  color: white;
+  transition: 0.3s;
+}
+
+.full-nav-body ul li a:hover{
+  color: var(--primary);
+  text-decoration: line-through;
+}
+
+.full-nav-footer{
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.full-nav-footer p{
+  color: gray;
+}
+.full-nav-footer span{
+  color: var(--primary);
+}
+
+.btn-close-fullnav{
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  width: 70px !important;
+  border-left: none;
+  border-right: none;
+}
